@@ -8,6 +8,13 @@ This experiments is a preliminary study on real-time instance segmentation in an
 Paper : **Depth-based Instance Segmentation for Object Recognition in Lightless Indoor Space, KISM`21 Fall** <br>
 [BumSoo Kim](https://github.com/gh-BumsooKim)\*, Graphics Realization Lab, CAU, (* CAU A&T)
 
+## Experimental Environments
+
+- Windows10
+- Microsoft Azure Kinect (ToF)
+- YOLACT Model (Backbone : Resnet101-FPN)
+- NYUv2 Dataset for Training
+
 ##  Training Dataset
 
 - using **NYUv2 (NYU-Depth Dataset V2), [Introduced by Nathan Silberman et al. in Indoor Segmentation and Support Inference from RGBD Images](https://cs.nyu.edu/~silberman/papers/indoor_seg_support.pdf)**
