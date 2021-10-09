@@ -5,6 +5,11 @@ Experiments with Depth-based Instance Segmentation for Lightless Indoor Space
 
 This experiments is a preliminary study on real-time instance segmentation in an lightless indoor space using only the depth image obtained by the ToF RGB-D Camera. 
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67869508/136656185-a714f9ec-1674-432d-821f-0b454d594bab.png">
+  <br> [Mapping Depth Channel to RGB Channel(8bit) - Depth Visualization and Preprocessing for uses like RGB Images]
+</p>
+
 Paper : **Depth-based Instance Segmentation for Object Recognition in Lightless Indoor Space, KISM`21 Fall** <br>
 [BumSoo Kim](https://github.com/gh-BumsooKim)\*, Graphics Realization Lab, CAU, (* CAU A&T)
 
