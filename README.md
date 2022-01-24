@@ -1,5 +1,7 @@
-# Depth Instance Segmentation
-Experiments with Depth-based Instance Segmentation for Lightless Indoor Space
+# Decoding Depth to RGB
+RGB Image Reconstruction from Depth Data using AutoEncoder and Object Segmentation
+
+![image](https://user-images.githubusercontent.com/67869508/150832590-b411b1fb-98f4-487e-9542-00af6f861f71.png)
 
 ## Abstract
 
