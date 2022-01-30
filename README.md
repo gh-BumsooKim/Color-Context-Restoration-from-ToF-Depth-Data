@@ -1,7 +1,11 @@
 # Decoding Depth to RGB
-RGB Image Reconstruction from Depth Data using AutoEncoder and Object Segmentation
+Real-time RGB Image Reconstruction from Depth Data using AutoEncoder and Object Segmentation focusing on small object
 
 ![image](https://user-images.githubusercontent.com/67869508/150832590-b411b1fb-98f4-487e-9542-00af6f861f71.png)
+
+## 1. AutoEncoder Design
+
+![image](https://user-images.githubusercontent.com/67869508/151686894-127efd80-d9f6-4992-b7f1-2ceb04a07001.png)
 
 ## Abstract
 
