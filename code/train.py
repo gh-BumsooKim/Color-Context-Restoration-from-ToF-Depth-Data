@@ -58,7 +58,7 @@ def train(args: argparse.ArgumentParser) -> None:
             max_epoch+=args.pepoch
         except:
             print("[DEFAULT] Pre-defined model is not loaded")
-            print("[Init] Model will be trained from initial parameters")
+            print("[INIT] Model will be trained from initial parameters")
         
     # Save Directory Settings
     if not os.path.isdir("./model"): os.mkdir("./model")
@@ -73,11 +73,10 @@ def train(args: argparse.ArgumentParser) -> None:
             optim_f.zero_grad()
 
             rgb = rgb.clone().detach().cuda()
-            #depth = torch.tensor(depth).cuda()
             depth = depth.clone().detach().cuda()
             depth = depth.float()
-            output = encoder(depth)
-            rgb_like = decoder(output)
+            z = encoder(depth)
+            rgb_like = decoder(z)
             loss = loss_f(rgb_like, rgb)
     
             loss.backward()

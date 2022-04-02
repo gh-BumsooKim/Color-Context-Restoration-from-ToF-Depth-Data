@@ -6,12 +6,6 @@ import glob
 
 class RGBDDataset(torch.utils.data.Dataset):
     def __init__(self, args: argparse.ArgumentParser, transform=None):
-        #self.path = args.path
-        #self.depth_path = self.path + "dataset/depth"
-        #self.rgb_path = self.path + "dataset/color"
-        
-        #self.depth_img_list = glob.glob(self.depth_path + "/*.png")
-        #self.rgb_img_list = glob.glob(self.rgb_path + "/*.jpg")
         self.depth_img_list = glob.glob("../dataset/depth"+ "/*.png")
         self.rgb_img_list = glob.glob("../dataset/color"+ "/*.jpg")
         
@@ -26,10 +20,7 @@ class RGBDDataset(torch.utils.data.Dataset):
         
         depth_img = Image.open(depth_path)
         rgb_img = Image.open(rgb_path)
-        
-        #depth = torch.FloatTensor(depth_img)
-        #rgb = torch.FloatTensor(rgb_img)
-        
+                
         if self.transform is not None:
             depth = self.transform(depth_img)
             rgb = self.transform(rgb_img)

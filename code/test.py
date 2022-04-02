@@ -11,9 +11,12 @@ import open3d as o3d
 
 def test(args: argparse.ArgumentParser) -> None:
     
-    encoder, decoder = torch.load(args.model)
-    encoder = encoder.cuda()
-    decoder = decoder.cuda()
+    if args.model == None:
+        raise RuntimeError("[Error] Pre-trained model is not loaded")
+    else:
+        encoder, decoder = torch.load(args.model)
+        encoder = encoder.cuda()
+        decoder = decoder.cuda()
     
     transform = transforms.Compose( [ transforms.ToTensor(), ] )
     
@@ -32,8 +35,8 @@ def test(args: argparse.ArgumentParser) -> None:
             continue
         
         input_raw = np.asarray(rgbd.depth, dtype=np.float32)
-        # torch.FloatTensor().cuda()
         input_image = transform(input_raw).unsqueeze(0).cuda()
+        #print(input.shape) -> (1, 720, 1280)
         
         # Image Reconstruction in AutoEncoder
         with torch.no_grad():
@@ -46,7 +49,7 @@ def test(args: argparse.ArgumentParser) -> None:
         output_image[:,:,:] = output_image[:,:,::-1]
         
         # Image Show with Raw Depth Map
-        print("ddd", output_image.shape)
+        print("Output Image Shape :", output_image.shape)
         
         input_raw = np.expand_dims(input_raw, axis=2)
         input_raw = np.concatenate((input_raw, input_raw, input_raw), axis=2)

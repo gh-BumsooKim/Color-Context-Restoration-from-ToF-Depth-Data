@@ -3,6 +3,7 @@ import os
 
 from train import train
 from test import test
+from calibration import calibration
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
@@ -17,6 +18,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--epoch", type=int, default=200)
     parser.add_argument("--gpu", type=str, default=0)
     parser.add_argument("--batch_size", type=int, default=8)
+    parser.add_argument("--middle_save", type=bool, default=True)
     
     return parser
 
@@ -29,7 +31,10 @@ if __name__ == "__main__":
     except AssertionError:
         raise AssertionError("One of the Train and Test Flags must be True. \
 Both cannot be True or False")
-    
+
+    if args.calibration == True:
+        calibration(args)
+
     if args.train == True:
         train(args)
     elif args.test  == True:
